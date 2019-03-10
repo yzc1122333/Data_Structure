@@ -1,0 +1,120 @@
+#ifndef __MATRIXGRAPH_H__
+#define __MATRIXGRAPH_H__
+
+namespace YzcLib{
+
+template<int N, typename V, typename E>
+class MatrixGraph: public Graph<V, E>{
+protected:
+
+public:
+	MatrixGraph();
+
+	V GetVertex(int i);
+
+	bool GetVertex(int i, V& value);
+
+	bool SetVertex(int i, const V& value);
+	
+	SharedPointer<Array<int>> GetAdjacent(int i);
+
+	E GetEdge(int i, int j);
+	bool GetEdge(int i, int j, E& value);
+
+	bool SetEdge(int i, int j, const E& value);
+
+	bool RemoveEdge(int i, int j);
+
+	int VConut();
+
+	int ECount();
+
+	int OD(int i);
+
+	int ID(int i);
+
+	int TD(int i);
+
+	~MatrixGraph();
+};
+
+template<int N, typename V, typename E>
+MatrixGraph<N, V, E>::MatrixGraph(){
+
+}
+
+template<int N, typename V, typename E>
+V MatrixGraph<N, V, E>::GetVertex(int i){
+
+}
+
+template<int N, typename V, typename E>
+bool MatrixGraph<N, V, E>::GetVertex(int i, V& value){
+
+}
+
+template<int N, typename V, typename E>
+bool MatrixGraph<N, V, E>::SetVertex(int i, const V& value){
+
+}
+
+template<int N, typename V, typename E>
+SharedPointer<Array<int>> MatrixGraph<N, V, E>::GetAdjacent(int i){
+
+}
+
+template<int N, typename V, typename E>
+E MatrixGraph<N, V, E>::GetEdge(int i, int j){
+
+}
+
+template<int N, typename V, typename E>
+E MatrixGraph<N, V, E>::GetEdge(int i, int j, E& value){
+
+}
+
+
+template<int N, typename V, typename E>
+bool MatrixGraph<N, V, E>:: SetEdge(int i, int j, const E& value){
+
+}
+
+template<int N, typename V, typename E>
+bool MatrixGraph<N, V, E>:: RemoveEdge(int i, int j){
+
+}
+
+template<int N, typename V, typename E>
+int MatrixGraph<N, V, E>:: VConut(){
+
+}
+
+template<int N, typename V, typename E>
+int MatrixGraph<N, V, E>::int ECount(){
+
+}
+
+template<int N, typename V, typename E>
+int MatrixGraph<N, V, E>:: OD(int i){
+
+}
+
+template<int N, typename V, typename E>
+int MatrixGraph<N, V, E>:: ID(int i){
+
+}
+
+template<int N, typename V, typename E>
+int MatrixGraph<N, V, E>:: TD(int i){
+
+}
+
+template<int N, typename V, typename E>
+MatrixGraph<N, V, E>::~MatrixGraph(){
+
+}
+
+
+}
+
+#endif

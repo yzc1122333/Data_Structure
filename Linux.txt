@@ -1,0 +1,62 @@
+#ifndef offsetof
+#define offsetof(TYPE MEMBER) ((size_t)&(TYPE*)0->MEMBER)
+#endif
+/*
+offsetof 用于计算TYPE结构体中MEMBER成员的偏移地址
+虽然宏定义中用到了0地址，但是计算结构体偏移是在编译期完成的，最后转换成了一个整形数，整个过程没有实际用到0地址的内容，因此运行过程中不会导致程序崩溃
+编译器做了什么？
+--编译器清楚的知道结构体成员变量的偏移地址
+--通过结构体变量首地址与偏移量定位成员变量
+*/
+
+/*
+({})用法：
+--({})是GUN C编译器的语法扩展
+--功能与逗号表达式类似，结果都是最后一个语句的值
+--与逗号表达式不同的是,({})允许出现代码块
+
+int a =0;
+int b = 0
+int r= (a = 1, b= 2, a+b);
+等价于
+int r = ({
+	int a = 1;
+	int b = 2;
+	a + b;
+});
+
+*/
+
+/*
+typeof关键字
+--typeof是GUN C 编译器的特有关键字
+--typeof只在编译期有效，用于获取变量的类型
+
+int i= 100；
+typeof(i) j =  i; // int j = i;
+const typedef(i)* p = &j //const int* p = &j;
+
+*/
+
+//已知结构体类型和结构体某个元素的地址，通过偏移量计算出结构体首地址
+
+struct ST{
+p指针->
+		i;
+		j;
+pc指针->
+		k;
+}
+pc = p + offset
+//计算偏移量
+size_t offset = offsetof(struct ST, c)
+通过偏移量反推结构体首地址
+struct ST* P = (struct ST*)((char*)pc - offset)
+//改进成宏定义
+#ifndef container_of
+#define container_of(ptr, type, member)({
+	//用于进行类型检查，通过typeof获得数据结构该元素的类型，如果类型不匹配，会报警告
+	const typeof(((type*)0)->member)* _mptr = (ptr); 
+	//计算偏移量,将当前指针转化成char*类型（指针运算偏移8bit），和偏移量相减
+	(type*)((char*)_mptr - offsetof(type, member));
+})

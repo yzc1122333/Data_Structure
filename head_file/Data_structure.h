@@ -1,0 +1,41 @@
+#ifndef __DATA_STRUCTURE_H__
+#define __DATA_STRUCTURE_H__
+
+#include <iostream>
+using namespace std;
+#include "Object.h"
+#include "Exception.h"
+//#include "SmartPoint.h"
+#include "StaticList.h"
+#include "DynamicList.h"
+#include "StaticArray.h"
+#include "DynamicArray.h"
+#include "LinkList.h"
+#include "StaticLinkList.h"
+#include "Pointer.h"
+// #include "SharedPointer.h"
+#include "CircleLink.h"
+#include "DualLinkList.h"
+#include "LinuxList.h"
+#include "DualCircleList.h"
+// #include "Stack.h"
+#include "StaticStack.h"
+#include "LinkStack.h"
+// #include "Queue.h"
+#include "StaticQueue.h"
+#include "LinkQueue.h"
+#include "StackQueue.h"
+#include "QueueStack.h"
+#include "String.h"
+#include "Sort.h"
+// #include "Tree.h"
+#include "TreeNode.h"
+#include "GTree.h"
+#include "GTreeNode.h"
+#include "BTree.h"
+#include "BTreeNode.h"
+// #include "Graph.h"
+#include "MatrixGraph.h"
+#include "ListGraph.h"
+
+#endif

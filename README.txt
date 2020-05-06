@@ -5,3 +5,5 @@ rule:
 	--不同类型的智能指针对象不能混合使用
 	--不要使用delete释放智能指针指向的堆空间
 CircleLink中游标end函数有问题，End()不推荐在CircleLink中使用。
+Reference:
+参考自狄泰软件学院, C++数据结构实战开发教程
